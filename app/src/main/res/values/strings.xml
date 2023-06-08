@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">FoodMaz</string>
+
+    <!-- Global -->
+
+    <string name="login_google">Google</string>
+    <string name="login_facebook">Facebook</string>
+
+
+    <string name="log_in">Acceder</string><!-- Log In -->
+    <string name="email">Correo electrónico</string><!-- E-mail -->
+    <string name="password">Contraseña</string><!-- Password -->
+    <string name="password_confirm">Confirmar contraseña</string><!-- Confirm Passsword -->
+    <string name="sign_in">Registrar</string> <!-- Sign In -->
+
+    <string name="home_toolbar_title">Restaurantes</string>
+    <string name="home_menu_signout">Cerrar sesión</string>
+
+
+    <!-- Login Fragment -->
+    <string name="empty_email">El e-mail está vacio</string>
+    <string name="empty_password">El password está vacio</string>
+
+    <!-- Firebase Exception -->
+    <string name="user_nofind">Credenciales invalidas</string>
+    <string name="no_network">No hay conexión</string>
+    <string name="low_password">Contraseña débil</string>
+
+    <!-- Sign Fragment -->
+    <string name="sign_empty_email">El e-mail está vacio</string>
+    <string name="sign_empty_password">El password está vacio</string>
+    <string name="sign_empty_cpassword">Está vacio</string>
+    <string name="sign_no_match">No coidicen</string>
+    <string name="user_added">Agregado exitosamente</string>
+
+    <!-- Detail Fragment -->
+    <string name="sitio_web">Sitio Web</string>
+    <string name="llamar">Llamar</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="ubicacion">Ubicación</string>
+    <string name="agregar_comentario">Agregar un comentario</string>
+    <string name="editar_comentario">Editar mi comentario</string>
+    <string name="hint_comentarios">Comentarios</string>
+    <string name="review_edit">Editar</string>
+    <string name="review_add">Agregar</string>
+    <string name="review_opinion">Opiniones</string>
+
+    <!-- Image Description -->
+    <string name="restaurant_image">Imagén Restaurant</string>
+    <string name="icono_llamar">Sitio Web Icono</string>
+    <string name="icono_web">Llamar Icono</string>
+
+    <!-- Restaurant Item -->
+    <string name="restaurant_description">Restaurant</string>
+    <string name="ver_mas">Ver más</string>
+
+    <string name="fb_login_protocol_scheme">fb1234</string>
+
+    <string name="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id iaculis velit. Aliquam fermentum leo eu lorem ullamcorper, vitae egestas est hendrerit.\n\nMorbi nec lectus accumsan odio tincidunt elementum pretium vitae arcu. Nam imperdiet sem quis nisi congue laoreet. Etiam non tempor arcu, ut malesuada nulla. Ut eget dolor quis neque tincidunt lacinia a sit amet metus.</string>
+</resources>

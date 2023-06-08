@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="model"
+            type="com.lizarragabriel.myfirebase.ui.detail.DetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp"
+                android:fitsSystemWindows="true">
+
+                <ImageView
+                    loadImage="@{model.restaurant.url}"
+                    android:id="@+id/header_cover_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/restaurant_image"
+                    tools:src="@drawable/ic_launcher_background" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:fontFamily="@font/cnbold"
+                    app:navigationIcon="@drawable/ic_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:layout_collapseMode="pin" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RatingBar
+                    android:scaleX="0.75"
+                    android:scaleY="0.75"
+                    android:transformPivotX="0dp"
+                    android:id="@+id/restaurantRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:isIndicator="true"
+                    android:max="10"
+                    android:progress="@{model.rating}"
+                    android:progressTint="#FFB300"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mWeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sitio_web"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/tts"
+                    app:layout_constraintStart_toEndOf="@+id/mInternetIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/restaurantRating" />
+
+                <ImageView
+                    android:id="@+id/mInternetIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_internet"
+                    android:contentDescription="@string/icono_web"
+                    app:layout_constraintBottom_toBottomOf="@+id/mWeb"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/restaurantRating" />
+
+                <ImageView
+                    android:id="@+id/mPhoneIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone"
+                    android:layout_marginEnd="3dp"
+                    android:contentDescription="@string/icono_llamar"
+                    app:layout_constraintBottom_toBottomOf="@+id/mCall"
+                    app:layout_constraintEnd_toStartOf="@+id/mCall"
+                    app:layout_constraintTop_toTopOf="@+id/mCall" />
+
+                <TextView
+                    android:id="@+id/mCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/llamar"
+                    android:fontFamily="@font/tts"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/restaurantRating" />
+
+
+                <TextView
+                    android:id="@+id/mAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/acerca_de"
+                    android:fontFamily="@font/nextsb"
+                    android:layout_marginTop="15dp"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mWeb" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="@{model.restaurant.descripcion, default=@string/content}"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/tts"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mAbout" />
+
+                <TextView
+                    android:id="@+id/mUbication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/nextsb"
+                    android:text="@string/ubicacion"
+                    android:textSize="22sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mUbication"
+                    tools:context=".MapsActivity" />
+
+                <TextView
+                    android:id="@+id/myCommentText"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nextsb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.myRating > 0 ? @string/editar_comentario : @string/agregar_comentario}"
+                    android:textSize="20sp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/map" />
+
+                <RatingBar
+                    android:id="@+id/mBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:max="10"
+                    android:progress="@{model.myRating}"
+                    android:progressTint="#FFB300"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/myCommentText" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mComentarioLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:hint="@string/hint_comentarios"
+                    app:layout_constraintStart_toStartOf="@+id/mBar"
+                    app:layout_constraintTop_toBottomOf="@+id/mBar">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mComentario"
+                        android:fontFamily="@font/tts"
+                        android:text="@{model.comment, default=`Hola`}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/mAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.myRating > 0 ? @string/review_edit : @string/review_add}"
+                    android:fontFamily="@font/seg"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="16dp"
+                    android:onClick="@{() -> model.mAddButton(mBar.getProgress(), mComentario.getText().toString())}"
+                    app:layout_constraintStart_toStartOf="@+id/mBar"
+                    app:layout_constraintTop_toBottomOf="@+id/mComentarioLayout" />
+
+                <TextView
+                    android:id="@+id/mReviewText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:fontFamily="@font/nextsb"
+                    android:text="@{@string/review_opinion + ` (` + model.reviewList.size() + `)`, default=`Reviews`}"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mAdd" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="@{model.loading ? View.GONE : View.VISIBLE}"
+                    android:id="@+id/reviewRecycler"
+                    loadReview="@{model.reviewList}"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    android:layout_marginEnd="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/mReviewText"
+                    app:layout_constraintTop_toBottomOf="@+id/mReviewText" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    app:layout_constraintTop_toBottomOf="@+id/mReviewText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{model.loading ? View.VISIBLE : View.GONE}">
+
+                        <include layout="@layout/review_item_loading" />
+                        <include layout="@layout/review_item_loading" />
+                        <include layout="@layout/review_item_loading" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

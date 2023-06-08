@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">FoodMaz</string>
+
+    <!-- Global -->
+
+    <string name="login_google">Google</string>
+    <string name="login_facebook">Facebook</string>
+
+
+    <string name="log_in">Log In</string><!-- Log In -->
+    <string name="email">E-mail</string><!-- E-mail -->
+    <string name="password">Password</string><!-- Password -->
+    <string name="password_confirm">Confirm password</string><!-- Confirm Passsword -->
+    <string name="sign_in">Sign In</string> <!-- Sign In -->
+
+    <string name="home_toolbar_title">Restaurants</string>
+    <string name="home_menu_signout">Log Out</string>
+
+
+    <!-- Login Fragment -->
+    <string name="empty_email">Empty e-mail</string>
+    <string name="empty_password">Empty password</string>
+
+    <!-- Firebase Exception -->
+    <string name="user_nofind">Invalid credentials</string>
+    <string name="no_network">No network</string>
+    <string name="low_password">Weak password</string>
+
+    <!-- Sign Fragment -->
+    <string name="sign_empty_email">Empty e-mail</string>
+    <string name="sign_empty_password">Empty password</string>
+    <string name="sign_empty_cpassword">Empty password</string>
+    <string name="sign_no_match">No match</string>
+    <string name="user_added">Added Successfully</string>
+
+    <!-- Detail Fragment -->
+    <string name="sitio_web">Web site</string>
+    <string name="llamar">Call</string>
+    <string name="acerca_de">Detail</string>
+    <string name="ubicacion">Ubication</string>
+    <string name="agregar_comentario">Add comment</string>
+    <string name="editar_comentario">Edit comment</string>
+    <string name="hint_comentarios">Commentary</string>
+    <string name="review_edit">Edit</string>
+    <string name="review_add">Add</string>
+    <string name="review_opinion">Review</string>
+
+    <!-- Image Description -->
+    <string name="restaurant_image">Restaurant image</string>
+    <string name="icono_llamar">Web site icon</string>
+    <string name="icono_web">Call icon</string>
+
+    <!-- Restaurant Item -->
+    <string name="restaurant_description">Restaurant</string>
+    <string name="ver_mas">View more</string>
+
+    <string name="fb_login_protocol_scheme">fb1234</string>
+
+    <string name="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id iaculis velit. Aliquam fermentum leo eu lorem ullamcorper, vitae egestas est hendrerit.\n\nMorbi nec lectus accumsan odio tincidunt elementum pretium vitae arcu. Nam imperdiet sem quis nisi congue laoreet. Etiam non tempor arcu, ut malesuada nulla. Ut eget dolor quis neque tincidunt lacinia a sit amet metus.</string>
+</resources>
